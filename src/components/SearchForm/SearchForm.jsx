@@ -15,6 +15,10 @@ export class SearchForm extends Component {
 
   submitQuery = e => {
     e.preventDefault();
+    if (!this.state.query) {
+      alert('введіть правильні значення');
+      return;
+    }
     this.props.submitQuery(this.state.query);
   };
 
